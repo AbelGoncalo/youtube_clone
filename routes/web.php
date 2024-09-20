@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\ChannelController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Site\{homeComponent};
+use App\Livewire\Channel\{EditchannelComponent};
+
 use App\Livewire\Auth\{loginComponent,registerComponent};
 
 
@@ -16,9 +19,13 @@ use App\Livewire\Auth\{loginComponent,registerComponent};
 |
 */
 
-Route::get('/', homeComponent::class)->name('site.index')->middleware(['auth']);
-Route::get('/login', loginComponent::class)->name('site.login');
+Route::get('/home', homeComponent::class)->name('site.index')->middleware(['auth']);
+Route::get('/', loginComponent::class)->name('site.login');
 Route::get('/criar-conta', registerComponent::class)->name('site.register');
+
+Route::middleware('auth')->group(function(){
+    Route::get('/channel/{channel}/edit',EditchannelComponent::class)->name('channel.edit');
+});
 
 
 

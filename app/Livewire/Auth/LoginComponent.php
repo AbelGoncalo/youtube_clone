@@ -47,6 +47,14 @@ class LoginComponent extends Component
 
             if(Auth::attempt(['email' => $this->email, 'password' => $this->password])){
 
+                $this->alert('success', 'SUCESSO', [
+                    'toast'=>false,
+                    'position'=>'center',
+                    'showConfirmButton' => true,
+                    'confirmButtonText' => 'OK',
+                    'text'=>'Operação Realizada Com Sucesso.'
+                ]);
+
                 redirect()->route('site.index');
             }else{
 
