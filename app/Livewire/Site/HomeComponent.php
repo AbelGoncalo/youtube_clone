@@ -89,8 +89,9 @@ class HomeComponent extends Component
     public function update()
     {
 
+       
 
-        $this->validate($this->rules, $this->messages);
+        //$this->validate($this->rules, $this->messages);
         try {
 
             $imageString = null;
@@ -129,6 +130,8 @@ class HomeComponent extends Component
                 'text' => 'Falha ao realizar operação'
             ]);
         }
+
+        session()->flash('message','Channel updated');
     }
 
     public function confirm($id)
@@ -178,6 +181,7 @@ class HomeComponent extends Component
 
     public function upload()
     {
-        dd('Leo');
+
+        dd('');
     }
 }

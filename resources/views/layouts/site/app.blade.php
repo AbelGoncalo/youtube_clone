@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     {{-- <link rel="stylesheet" href="../node_modules"> --}}
     {{-- <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.js"> --}}
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Clone Youtube</title>
@@ -17,16 +19,19 @@
         <div class="container-fluid">
             <a class="navbar-brand">Laravel</a>
 
+
             <div class="">
 
                 @auth
+
+                
                     @livewire('auth.logout-component')
                 @endauth
 
                 @guest
-                    
-                <a href="{{ route('site.login') }}" class="btn btn-outline-success aut">Login</a>
-                <a href="{{ route('site.register') }}" class="btn btn-outline-success">Register</a>
+
+                    <a href="{{ route('site.login') }}" class="btn btn-outline-success aut">Login</a>
+                    <a href="{{ route('site.register') }}" class="btn btn-outline-success">Register</a>
                 @endguest
             </div>
 
@@ -43,6 +48,8 @@
     @livewireScripts
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+
     <x-livewire-alert::scripts />
 </body>
 

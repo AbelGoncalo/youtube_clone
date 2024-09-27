@@ -44,6 +44,22 @@ return [
             'throw' => false,
         ],
 
+        'videos-temp' => [
+            'driver' => 'local',
+            'root' => storage_path('app/videos-temp'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'videos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/videos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -58,19 +74,10 @@ return [
 
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Symbolic Links
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the symbolic links that will be created when the
-    | `storage:link` Artisan command is executed. The array keys should be
-    | the locations of the links and the values should be their targets.
-    |
-    */
-
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('videos') => storage_path('app/videos'),
+   
     ],
 
 ];

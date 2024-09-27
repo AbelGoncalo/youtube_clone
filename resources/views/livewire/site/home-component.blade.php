@@ -180,15 +180,18 @@
 
                                     </div>
 
-
-
                                     <div class="col-12">
                                         <div class="form-group">
                                             <button class="btn btn-primary " type="submit">Update</button>
                                         </div>
                                     </div>
-
                                 </div>
+
+                                @if (session()->has('message'))
+                                    <div class="alert alert-success">
+                                        {{session('message')}}
+                                    </div> 
+                                @endif
                             </form>
                         </div>
 

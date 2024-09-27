@@ -11,14 +11,14 @@ class Channel extends Model
 
     protected $guarded = [];
 
-    protected $fillable =[
-        'name',
-        'slug',
-        'uid',
-        'user_id',
-        'image',
-        'description'
-    ];
+    // protected $fillable =[
+    //     'name',
+    //     'slug',
+    //     'uid',
+    //     'user_id',
+    //     'image',
+    //     'description'
+    // ];
 
     public function gettRoutKeyName(){
         return 'slug';
@@ -26,6 +26,10 @@ class Channel extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function videos(){
+        return $this->hasMany(Video::class);
     }
 
 }
